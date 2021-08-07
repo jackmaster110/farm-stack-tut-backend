@@ -16,7 +16,7 @@ async def fetch_all_todos():
     todos = []
     cursor = collection.find()
     async for doc in cursor:
-        todos.append(doc)
+        todos.append(Todo(**doc))
     return todos
 
 async def fetch_one_todo(nanoid):
