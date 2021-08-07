@@ -26,7 +26,7 @@ async def fetch_one_todo(nanoid):
 async def create_todo(todo):
     doc = todo.dict()
     await collection.insert_one(doc)
-    result = await fetch_one_todo(doc.nanoid)
+    result = await fetch_one_todo(todo.nanoid)
     return result
 
 async def change_todo(nanoid, title, desc, checked):
