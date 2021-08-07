@@ -25,7 +25,7 @@ async def get_one_todo(nanoid):
     if not todo: raise HTTPException(404)
     return todo
 
-@app.get("/api/get-todo", response_model=Todo)
+@app.get("/api/get-todo")
 async def get_todos():
     todos = await fetch_all_todos()
     if not todos: raise HTTPException(404)
