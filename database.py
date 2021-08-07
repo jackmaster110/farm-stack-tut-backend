@@ -31,7 +31,7 @@ async def create_todo(todo):
 
 async def change_todo(nanoid, title, desc, checked):
     await collection.update_one({"nanoid": nanoid}, {"$set": {"title": title, "desc": desc, "checked": checked}})
-    result = await fetch_on_todo(nanoid)
+    result = await fetch_one_todo(nanoid)
     return result
 
 async def remove_todo(nanoid):
