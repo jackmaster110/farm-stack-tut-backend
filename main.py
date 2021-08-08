@@ -3,7 +3,7 @@ from fastapi import HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from database import * 
 
-origins = ["*"] # This will eventually be changed to only the origins you will use once it's deployed, to secure the app a bit more.
+origins = ["https://jackmaster110.github.io"] # This will eventually be changed to only the origins you will use once it's deployed, to secure the app a bit more.
 
 app = FastAPI()
 
