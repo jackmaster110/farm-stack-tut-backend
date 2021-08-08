@@ -38,8 +38,8 @@ async def add_todo(todo: Todo):
     return result
 
 @app.put("/api/update-todo/{nanoid}", response_model=Todo)
-async def update_todo(nanoid, title, desc, checked):
-    result = await change_todo(nanoid, title, desc, checked)
+async def update_todo(todo):
+    result = await change_todo(todo.nanoid, todo.title, todo.desc, todo.checked)
     if not result: raise HTTPException(400)
     return result
 
